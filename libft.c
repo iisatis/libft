@@ -449,10 +449,35 @@ char	**ft_split (char const *s, char c)
 
 /////////////////////////////////////////// A TESTER /////////////////////////////////////////////////////////////////
 
-char *ft_itoa (int n)
+int     lgt_check (int n)
 {
     int i;
+
+    i = 1;
+    while ((n /= 10) > 0)
+        i++;
+    return (i);
+}
+
+
+char    *ft_itoa (int n)
+{
+    int i;
+    int np;
     char *dest;
 
-    
+    np = 1;
+    if (n < 0)
+        np = -1;
+    n *= np;
+    i = lgt_check(n);
+    if (np < 0)
+        i++;
+    if (!(dest = malloc(sizeof(char) * i)))
+		return (NULL);
+
+
+
+
+
 }
