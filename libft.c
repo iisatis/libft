@@ -98,9 +98,9 @@ int     ft_memcmp (const void *p1, const void *p2, size_t size)
     r = 0;
     while (p1[i] == p2[i] && i < size)
         i++;
-    if (first_str[i] < second_str[i] && i < size)
+    if (p1[i] < p2[i] && i < size)
         r = -1;
-    else if (first_str[i] > second_str[i] && i < size)
+    else if (p1[i] > p2[i] && i < size)
         r = 1;
     return r;
 }
