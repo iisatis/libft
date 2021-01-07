@@ -10,6 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+#include <stdlib.h>
+
 void	*ft_memset(void *p, int value, size_t size)
 {
 	int i;
@@ -522,7 +525,7 @@ void ft_putchar_fd(char c, int fd)
 
 
 
-	
+
 }
 
 
