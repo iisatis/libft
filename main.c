@@ -200,14 +200,19 @@ int     ft_atoi(const char *str)
 
 int		main()
 {
-	puts("Test strlen");
-	char *strlen1 = "qwertyuiopas";
-	char *strlen2 = "q";
-	char *strlen3 = "";
-	printf("Attendu: 12, Recu: %d\n", ft_strlen(strlen1));
-	printf("Attendu: 1, Recu: %d\n", ft_strlen(strlen2));
+	puts("TEST ALPHA");
+	char alpha1 = "a";
+	char alpha2 = "z";
+	char alpha3 = "A";
+	char alpha4 = "A";
+	char alpha5 = "A";
+	char alpha6 = "A";
+	printf("Attendu: 1, Recu: %d\n", ft_strlen(strlen1));
+	printf("Attendu: 2, Recu: %d\n", ft_strlen(strlen2));
 	printf("Attendu: 0, Recu: %d\n", ft_strlen(strlen3));
-
+	printf("Attendu: 1, Recu: %d\n", ft_strlen(strlen1));
+	printf("Attendu: 2, Recu: %d\n", ft_strlen(strlen2));
+	printf("Attendu: 0, Recu: %d\n", ft_strlen(strlen3));
 
 
 
