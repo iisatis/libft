@@ -304,18 +304,15 @@ int     ft_atoi(const char *str)
 
 void    *ft_calloc(size_t elem_count, size_t elem_size)
 {
+	char *dest;
 
-
-/*///// = malloc(elem_size * elem_count);*/
-
-
-
-
-
-
+	if (!(dest = malloc(elem_size * elem_count)))
+		return (NULL);
+	ft_memset(dest, 0, elem_count * elem_size);
+	return (dest);
 }
 
-/*///////////////////////////////////////////// A FAIRE /////////////////////////////////////////////////////////////////////*/
+/*///////////////////////////////////////////// A TESTER /////////////////////////////////////////////////////////////////////*/
 
 char *ft_strdup(const char *src)
 {
@@ -379,14 +376,52 @@ return (dest);
 
 /*///////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-char *ft_strtrim(char const *s1, char const *set)
+int		char_count(char const *str, char const *set)
 {
-    int i;
-    char *dest;
+	int i;
+	int c;
 
+	i = 0;
+	c = 0;
+	while (*str)
+	{
+		while(set[i] && set[i] != *str)
+			i++
+		if(!set[i])
+			c++;
+		i = 0;
+		str++;
+	}
+	return (c);
 }
 
-/*///////////////////////////////////////// A FAIRE /////////////////////////////////////////////////////////*/
+char	*ft_strtrim(char const *s1, char const *set)
+{
+    int i;
+	int j;
+	int lgt;
+    char *dest;
+
+	i = 0;
+	j = -1;
+	lgt = (char_count(s1, set) + 1);
+	if(!(dest = malloc(lgt * sizeof(char)))) 
+        return (NULL);
+	
+	while (*s1)
+	{
+		while(set[i] && set[i] != *s1)
+			i++;
+		if(!set[i])
+			dest[++j] = *s1;
+		i = 0;
+		s1++;
+	}
+	dest[++j] = '\0';
+	return (dest);
+}
+
+/*///////////////////////////////////////// A TESTER /////////////////////////////////////////////////////////*/
 
 int		word_lgt(char *str, char sep, int i)
 {
