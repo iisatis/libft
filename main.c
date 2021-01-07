@@ -1,22 +1,25 @@
+
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
 
-int     lgt_check (int n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-    int i;
+	int		i;
+	int		lgt;
+	char	*dest;
 
-    i = 1;
-    while ((n /= 10) > 0)
-        i++;
-    return (i);
+	i = -1;
+	lgt = (ft_strlen(s) + 1);
+	if (!(dest = malloc(sizeof(char*) * lgt)))
+		return (NULL);
+	while (s[++i])
+		dest[i] = f(s[i]);
+	dest[i] = '\0';
+	return (dest);
 }
 
-int    main()
+int		main()
 {
-    int i;
-
-    i = 545455;
-    printf("%d", lgt_check(i));
-    return 0;
+	return (0);
 }

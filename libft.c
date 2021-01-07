@@ -1,58 +1,70 @@
-void    *ft_memset (void *p, int value, size_t size)
-{
-    int i;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/07 15:29:16 by pflorent          #+#    #+#             */
+/*   Updated: 2021/01/07 15:29:16 by pflorent         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-    i = -1;
-    while (++i < size)
-        p[i] = value;
-    return (p);
+void	*ft_memset(void *p, int value, size_t size)
+{
+	int i;
+	
+	i = -1;
+	while (++i < size)
+		p[i] = value;
+	return (p);
 }
 
-void    ft_bzero (void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-    int i;
+	int i;
 
-    i = -1;
-    while (++i < n)
-        s[i] = '\0';
+	i = -1;
+	while (++i < n)
+		s[i] = '\0';
 }
 
-void    *ft_memcpy (void *dest, const void *src, size_t size)
+void	*ft_memcpy(void *dest, const void *src, size_t size)
 {
-    int i;
+	int i;
 
-    i = -1;
-    while (++i < size)
-        dest[i] = src[i];
-    return (dest);
+	i = -1;
+	while (++i < size)
+		dest[i] = src[i];
+	return (dest);
 }
 
-void    *ft_memccpy (void *dest, const void *src, int ch, size_t size)
+void	*ft_memccpy(void *dest, const void *src, int ch, size_t size)
 {
-    int i;
-    int *p;
+	int i;
+	int *p;
 
-    i = -1;
-    p = NULL;
-    while (++i < size && src[i] != ch)
-        dest[i] = src[i];
-    if (src[i] == ch)
-    {
-        dest[i] = src[i];
-        *p = &dest[i];
-    }
-    return (p);
+	i = -1;
+	p = NULL;
+	while (++i < size && src[i] != ch)
+		dest[i] = src[i];
+	if (src[i] == ch)
+	{
+		dest[i] = src[i];
+		*p = &dest[i];
+	}
+	return (p);
 }
 
-void    *ft_memmove (void *dest, const void *src, size_t size)
+void	*ft_memmove (void *dest, const void *src, size_t size)
 {
-    int i;
-    void temp[size];
+	int i;
+	void temp[size];
 
-    i = -1;
-    while (++i < size)
-        temp[i] = src[i];
-    i = -1;
+	i = -1;
+	while (++i < size)
+		temp[i] = src[i];
+	i = -1;
     while (++i < size)
         dest[i] = temp[i];
     return (dest);
@@ -110,7 +122,7 @@ int     ft_isalpha(int a)
         return 0;
 }
 
-int     ft_isdigit (int a)
+int     ft_isdigit(int a)
 {
     if (a >= '0' && a <= '9')
         return 1;
@@ -118,7 +130,7 @@ int     ft_isdigit (int a)
         return 0;
 }
 
-int     ft_isalnum (int a)
+int     ft_isalnum(int a)
 {
     if ((a >= 'a' && a <= 'z')
         || (a >= 'A' && a <= 'Z')
@@ -128,7 +140,7 @@ int     ft_isalnum (int a)
         return 0;
 }
 
-int     ft_isascii (int a)
+int     ft_isascii(int a)
 {
     if (a >= 0 && a <= 127)
         return 1;
@@ -136,7 +148,7 @@ int     ft_isascii (int a)
         return 0;
 }
 
-int     ft_isprint (int a)
+int     ft_isprint(int a)
 {
     if (a >= 32 && a <= 126)
         return 1;
@@ -144,21 +156,21 @@ int     ft_isprint (int a)
         return 0;
 }
 
-int     ft_toupper (int a)
+int     ft_toupper(int a)
 {
     if (a >= 'a' && a <= 'z')
         a -= 32;
     return a;
 }
 
-int     ft_tolower (int a)
+int     ft_tolower(int a)
 {
     if (a >= 'A' && a <= 'Z')
         a += 32;
     return a;
 }
 
-char    *ft_strchr (const char *str, int chr)
+char    *ft_strchr(const char *str, int chr)
 {
     while (*str)
     {
@@ -169,7 +181,7 @@ char    *ft_strchr (const char *str, int chr)
     return (NULL);
 }
 
-char    *ft_strrchr (const char *str, int chr)
+char    *ft_strrchr(const char *str, int chr)
 {
     int i;
 
@@ -190,7 +202,7 @@ char    *ft_strrchr (const char *str, int chr)
     }
 }
 
-int     ft_strncmp (const char *first_str, const char *second_str, size_t lgt)
+int     ft_strncmp(const char *first_str, const char *second_str, size_t lgt)
 {
     int i;
     int r;
@@ -261,7 +273,7 @@ char    *ft_strnstr(const char *str, const char *find, unsigned int lgt)
 	return (NULL);
 }
 
-int     ft_atoi (const char *str)
+int     ft_atoi(const char *str)
 {
     long n;
     int np;
@@ -287,7 +299,7 @@ int     ft_atoi (const char *str)
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-void    *ft_calloc (size_t elem_count, size_t elem_size)
+void    *ft_calloc(size_t elem_count, size_t elem_size)
 {
 
 
@@ -302,7 +314,7 @@ void    *ft_calloc (size_t elem_count, size_t elem_size)
 
 /*///////////////////////////////////////////// A FAIRE /////////////////////////////////////////////////////////////////////*/
 
-char *ft_strdup (const char *src)
+char *ft_strdup(const char *src)
 {
     int i;
     char *dest;
@@ -320,7 +332,7 @@ char *ft_strdup (const char *src)
 /*/////////////////////////////////////////////// PART 2 //////////////////////////////////////////////////////////////////*/
 
 
-char *ft_substr (char const *s, unsigned int start, size_t len)
+char *ft_substr(char const *s, unsigned int start, size_t len)
 {
     int i;
     int size;
@@ -338,7 +350,7 @@ char *ft_substr (char const *s, unsigned int start, size_t len)
     return (dest);
 }
 
-char *ft_strjoin (char const *s1, char const *s2)
+char *ft_strjoin(char const *s1, char const *s2)
 {
     int i;
     int size;
@@ -364,7 +376,7 @@ return (dest);
 
 /*///////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-char *ft_strtrim (char const *s1, char const *set)
+char *ft_strtrim(char const *s1, char const *set)
 {
     int i;
     char *dest;
@@ -435,7 +447,7 @@ char	**fill_tab(char **tab, char sep, char *str)
 	return (tab);
 }
 
-char	**ft_split (char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	int		tab_lgt;
 	char	**tab;
@@ -447,9 +459,9 @@ char	**ft_split (char const *s, char c)
 	return (tab);
 }
 
-/*/////////////////////////////////////////// A TESTER ////////////////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////// A TESTER ///////////////////////////////////////////////////////*/
 
-int     lgt_check (int n)
+int     lgt_check(int n)
 {
     int i;
 
@@ -460,7 +472,7 @@ int     lgt_check (int n)
 }
 
 
-char    *ft_itoa (int n)
+char    *ft_itoa(int n)
 {
     int i;
     int np;
@@ -483,10 +495,49 @@ char    *ft_itoa (int n)
     return (dest);
 }
 
-char *ft_strmapi(char const *s, char (*f)(unsigned
-int, char));
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+    int i;
+    int lgt;
+    char *dest;
+
+    i = -1;
+    lgt = (ft_strlen(s) + 1);
+    if (!(dest = malloc(sizeof(char*) * lgt)))
+		return (NULL);
+    while (s[++i])
+        dest[i] = f(s[i]);
+    dest[i] = '\0';
+    return (dest);
+}
+
+/*////////////////////////////////////////////// A TESTER /////////////////////////////////////////////*/
+
+void ft_putchar_fd(char c, int fd)
+{
 
 
+
+
+
+
+
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*////////////////////////////////////////////// FILES //////////////////////////////////////////////////////*/
 
 int main()
 {
