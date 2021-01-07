@@ -145,7 +145,7 @@ int     ft_isalnum(int a)
 
 int     ft_isascii(int a)
 {
-    if (a >= 0 && a <= 127)
+    if (a >= 0 && a <= 0177)
         return 1;
     else
         return 0;
@@ -423,39 +423,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 /*///////////////////////////////////////// A TESTER /////////////////////////////////////////////////////////*/
 
-int		word_lgt(char *str, char sep, int i)
-{
-	int j;
 
-	j = 1;
-	while (str[i] && str[i] != sep)
-	{
-		j++;
-		i++;
-	}
-	return (j);
-}
-
-int		check_lgt(char *str, char sep)
-{
-	int w_count;
-	int i;
-
-	i = 0;
-	w_count = 0;
-	while (str[i] == sep)
-		i++;
-	while (str[i])
-	{
-		while (str[i] && str[i] != sep)
-			i++;
-		w_count++;
-		while (str[i && str[i] == sep)
-			i++;
-	}
-	return (w_count);
-}
-
+/*
 char	**fill_tab(char **tab, char sep, char *str)
 {
 	int	w_lgt;
@@ -484,20 +453,19 @@ char	**fill_tab(char **tab, char sep, char *str)
 	tab[x] = 0;
 	return (tab);
 }
+*/
+
+
+
+
 
 char	**ft_split(char const *s, char c)
 {
-	int		tab_lgt;
-	char	**tab;
+	
 
-	tab_lgt = check_lgt(s, c);
-	if (!(tab = malloc(sizeof(char*) * (tab_lgt + 1))))
-		return (NULL);
-	tab = fill_tab(tab, c, s);
-	return (tab);
 }
 
-/*/////////////////////////////////////////// A TESTER ///////////////////////////////////////////////////////*/
+/*/////////////////////////////////////////// A FAIRE ///////////////////////////////////////////////////////*/
 
 int     lgt_check(int n)
 {
