@@ -6,7 +6,7 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 17:46:28 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/08 17:46:53 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/08 18:33:09 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ void	free_all(char **to_free)
 	int i;
 
 	i = -1;
-	while(to_free[++i])
+	while (to_free[++i])
 		free(to_free[i]);
 	free(to_free);
 }
@@ -25,48 +25,61 @@ int		words_count(char const *s, char sep)
 	int i;
 	int count;
 
-
 	i = 0;
 	count = 0;
-	while(s[i])
+	while (s[i])
 	{
-		while(s[i] == sep)
+		while (s[i] == sep)
 			i++;
-		if(s[i])
+		if (s[i])
 			count++;
-		while(s[i] && (s[i] != sep))
+		while (s[i] && (s[i] != sep))
 			i++;
 	}
 	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+int		word_len(char *s, char sep)
 {
 	int i;
-	int count;
-	int len;
-	char **dest;
+
+	i = 0;
+	while (s[i] != sep)
+		i++;
+	return (i);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int		i;
+	int		count;
+	char	**dest;
 
 	i = -1;
 	count = words_count(s, c);
-	if(!count)
+	if (!count)
 	{
-		if(!(dest[0] = malloc(sizeof(char)))) 
+		if (!(dest[0] = malloc(sizeof(char))))
 			return (NULL);
 		*dest[0] = '\0';
 		return (dest);
 	}
-	while(s[++i])
+	if (!(dest = malloc(sizeof(char*) * (count + 1))))
+		return (NULL);
+	while (s[++i])
 	{
-		while(s[i] == c)
+		while (s[i] == c)
 			i++;
-		if(s[i])
+		if (s[i])
 		{
-
-
-
-
-
+			if (!(*dest = ft_strndup(&s[i])))
+			{
+				free_all(dest);
+				return (NULL);
+			}
+			dest++;
+			i += word_len(&s[i], c);
 		}
 	}
+	return (dest);
 }
