@@ -6,7 +6,7 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:49:08 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/08 16:58:04 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/08 17:40:59 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int		char_count(char const *str, char const *set)
 	c = 0;
 	while (*str)
 	{
-		while(set[i] && set[i] != *str)
-			i++
-		if(!set[i])
+		while (set[i] && set[i] != *str)
+			i++;
+		if (!set[i])
 			c++;
 		i = 0;
 		str++;
@@ -31,21 +31,21 @@ int		char_count(char const *str, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int i;
-	int j;
-	int lgt;
-	char *dest;
+	int		i;
+	int		j;
+	int		lgt;
+	char	*dest;
 
 	i = 0;
 	j = -1;
 	lgt = (char_count(s1, set) + 1);
-	if(!(dest = malloc(lgt * sizeof(char)))) 
+	if (!(dest = malloc(lgt * sizeof(char))))
 		return (NULL);
 	while (*s1)
 	{
-		while(set[i] && set[i] != *s1)
+		while (set[i] && set[i] != *s1)
 			i++;
-		if(!set[i])
+		if (!set[i])
 			dest[++j] = *s1;
 		i = 0;
 		s1++;
