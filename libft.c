@@ -68,190 +68,190 @@ void	*ft_memmove (void *dest, const void *src, size_t size)
 	while (++i < size)
 		temp[i] = src[i];
 	i = -1;
-    while (++i < size)
-        dest[i] = temp[i];
-    return (dest);
+	while (++i < size)
+		dest[i] = temp[i];
+	return (dest);
 }
 
 void    *ft_memchr (const void *mem_block, int ch, size_t size)
 {
-    int i;
-    int *p;
+	int i;
+	int *p;
 
-    i = -1;
-    p = NULL;
-    while (++i < size)
-        if (mem_block[i] == ch)
-        {
-            *p = &mem_block[i];
-            return (p);
-        }
-    return (p);
+	i = -1;
+	p = NULL;
+	while (++i < size)
+		if (mem_block[i] == ch)
+		{
+			*p = &mem_block[i];
+			return (p);
+		}
+	return (p);
 }
 
 int     ft_memcmp (const void *p1, const void *p2, size_t size)
 {
-    int i;
-    int r;
+	int i;
+	int r;
 
-    i = 0;
-    r = 0;
-    while (p1[i] == p2[i] && i < size)
-        i++;
-    if (p1[i] < p2[i] && i < size)
-        r = -1;
-    else if (p1[i] > p2[i] && i < size)
-        r = 1;
-    return r;
+	i = 0;
+	r = 0;
+	while (p1[i] == p2[i] && i < size)
+		i++;
+	if (p1[i] < p2[i] && i < size)
+		r = -1;
+	else if (p1[i] > p2[i] && i < size)
+		r = 1;
+	return r;
 }
 
 int     ft_strlen(char *str)
 {
-    int i;
+	int i;
 
-    i = 0;
-    while (str[i] != '\0')
-            i++;
-    return (i);
+	i = 0;
+	while (str[i] != '\0')
+			i++;
+	return (i);
 }
 
 int     ft_isalpha(int a)
 {
-    if (a >= 'a' && a <= 'z')
-        return 2;
-    else if (a >= 'A' && a <= 'Z')
-        return 1;
-    else
-        return 0;
+	if (a >= 'a' && a <= 'z')
+		return 2;
+	else if (a >= 'A' && a <= 'Z')
+		return 1;
+	else
+		return 0;
 }
 
 int     ft_isdigit(int a)
 {
-    if (a >= '0' && a <= '9')
-        return 1;
-    else
-        return 0;
+	if (a >= '0' && a <= '9')
+		return 1;
+	else
+		return 0;
 }
 
 int     ft_isalnum(int a)
 {
-    if ((a >= 'a' && a <= 'z')
-        || (a >= 'A' && a <= 'Z')
-        || (a >= '0' && a <= '9'))
-        return 1;
-    else
-        return 0;
+	if ((a >= 'a' && a <= 'z')
+		|| (a >= 'A' && a <= 'Z')
+		|| (a >= '0' && a <= '9'))
+		return 1;
+	else
+		return 0;
 }
 
 int     ft_isascii(int a)
 {
-    if (a >= 0 && a <= 0177)
-        return 1;
-    else
-        return 0;
+	if (a >= 0 && a <= 0177)
+		return 1;
+	else
+		return 0;
 }
 
 int     ft_isprint(int a)
 {
-    if (a >= 32 && a <= 126)
-        return 1;
-    else
-        return 0;
+	if (a >= 32 && a <= 126)
+		return 1;
+	else
+		return 0;
 }
 
 int     ft_toupper(int a)
 {
-    if (a >= 'a' && a <= 'z')
-        a -= 32;
-    return a;
+	if (a >= 'a' && a <= 'z')
+		a -= 32;
+	return a;
 }
 
 int     ft_tolower(int a)
 {
-    if (a >= 'A' && a <= 'Z')
-        a += 32;
-    return a;
+	if (a >= 'A' && a <= 'Z')
+		a += 32;
+	return a;
 }
 
 char    *ft_strchr(const char *str, int chr)
 {
-    while (*str)
-    {
-        if (*str == chr)
-            return str;
-        str++;
-    }
-    return (NULL);
+	while (*str)
+	{
+		if (*str == chr)
+			return str;
+		str++;
+	}
+	return (NULL);
 }
 
 char    *ft_strrchr(const char *str, int chr)
 {
-    int i;
+	int i;
 
-    i = 0;
-    while (*str)
-    {
-        if (*str == chr)
-            i++;
-        str++;
-    }
-    if (i == 0)
-        return (NULL);
-    else
-    {
-        while (*str != chr)
-            str--;
-        return str;
-    }
+	i = 0;
+	while (*str)
+	{
+		if (*str == chr)
+			i++;
+		str++;
+	}
+	if (i == 0)
+		return (NULL);
+	else
+	{
+		while (*str != chr)
+			str--;
+		return str;
+	}
 }
 
 int     ft_strncmp(const char *first_str, const char *second_str, size_t lgt)
 {
-    int i;
-    int r;
+	int i;
+	int r;
 
-    i = 0;
-    r = 0;
-    while (first_str[i] && (first_str[i] == second_str[i]) && i < lgt)
-        i++;
-    if (first_str[i] < second_str[i])
-        r = -1;
-    else if (first_str[i] > second_str[i])
-        r = 1;
-    return r;
+	i = 0;
+	r = 0;
+	while (first_str[i] && (first_str[i] == second_str[i]) && i < lgt)
+		i++;
+	if (first_str[i] < second_str[i])
+		r = -1;
+	else if (first_str[i] > second_str[i])
+		r = 1;
+	return r;
 }
 
 
 int     ft_strlcpy(char *dest, const char *src, int lgt)
 {
-    int i;
-    int n;
+	int i;
+	int n;
 
-    i = -1;
-    n = ft_strlen(src);
-    while (src[++i] && i < (lgt - 1))
-        dest[i] = src[i];
-    dest[i] = '\0';
-    return n;
+	i = -1;
+	n = ft_strlen(src);
+	while (src[++i] && i < (lgt - 1))
+		dest[i] = src[i];
+	dest[i] = '\0';
+	return n;
 }
 
 int     ft_strlcat(char *dest, const char *src, int lgt)
 {
-    int dest_size;
-    int i;
+	int dest_size;
+	int i;
 
-    dest_size = ft_strlen(src) + ft_strlen(dest);
-    i = 0;
-    while (i < (lgt - 1) && dest[i])
-        i++;
-    while (i < (lgt - 1) && *src)
-    {
-        dest[i] = *src;
-        i++;
-        src++;
-    }
-    dest[i] = '\0';
-    return dest_size;
+	dest_size = ft_strlen(src) + ft_strlen(dest);
+	i = 0;
+	while (i < (lgt - 1) && dest[i])
+		i++;
+	while (i < (lgt - 1) && *src)
+	{
+		dest[i] = *src;
+		i++;
+		src++;
+	}
+	dest[i] = '\0';
+	return dest_size;
 }
 
 char    *ft_strnstr(const char *str, const char *find, unsigned int lgt)
@@ -267,37 +267,37 @@ char    *ft_strnstr(const char *str, const char *find, unsigned int lgt)
 			i = 1;
 
 			while (str[i] == find[i] && lgt > i)
-                i++;
-            if (find[i] == '\0' || i == lgt)
-            return (str);
+				i++;
+			if (find[i] == '\0' || i == lgt)
+			return (str);
 		}
-        str++;
+		str++;
 	}
 	return (NULL);
 }
 
 int     ft_atoi(const char *str)
 {
-    long n;
-    int np;
+	long n;
+	int np;
 
-    n = 0;
-    np = 1;
-    while ((*str == ' ') || (*str >= 9 && *str <= 13))
-        str++;
-    if (*str == '-')
-    {
-        np *= -1;
-        str++;
-    }
-    while (*str >= '0' && *str <= '9')
-    {
-        n *= 10;
-        n += (*str - '0');
-        str++;
-    }
-    n *= np;
-    return n;
+	n = 0;
+	np = 1;
+	while ((*str == ' ') || (*str >= 9 && *str <= 13))
+		str++;
+	if (*str == '-')
+	{
+		np *= -1;
+		str++;
+	}
+	while (*str >= '0' && *str <= '9')
+	{
+		n *= 10;
+		n += (*str - '0');
+		str++;
+	}
+	n *= np;
+	return n;
 }
 
 /*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
@@ -316,43 +316,43 @@ void    *ft_calloc(size_t elem_count, size_t elem_size)
 
 char *ft_strdup(const char *src)
 {
-    int i;
-    char *dest;
-    int size;
+	int i;
+	char *dest;
+	int size;
 
-    i = -1;
-    size = ft_strlen(src);
-    if(!(dest = malloc(size * sizeof(char))) || size = 0)
-        return (NULL); 
-    while (src[++i])
-        src[i] = dest[i];
-    return (dest);
+	i = -1;
+	size = ft_strlen(src);
+	if(!(dest = malloc(size * sizeof(char))) || size = 0)
+		return (NULL); 
+	while (src[++i])
+		src[i] = dest[i];
+	return (dest);
 }
 
 /*/////////////////////////////////////////////// PART 2 //////////////////////////////////////////////////////////////////*/
 
 char *ft_strndup(const char *src, unsigned int len)
 {
-    int i;
-    char *dest;
+	int i;
+	char *dest;
 
-    i = -1;
-    if(!(dest = malloc(len + 1 * sizeof(char))))
-        return (NULL); 
-    while (src[++i] && i < len)
-        dest[i] = src[i];
+	i = -1;
+	if(!(dest = malloc(len + 1 * sizeof(char))))
+		return (NULL); 
+	while (src[++i] && i < len)
+		dest[i] = src[i];
 	dest[i] = '\0';
-    return (dest);
+	return (dest);
 }
 
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
-    int i;
-    int size;
+	int i;
+	int size;
 	char *dest;
 
-    i = -1;
-    while (++i < start)
+	i = -1;
+	while (++i < start)
 		if(!s[i])
 		{
 			if(!(dest = malloc(sizeof(char))))
@@ -360,34 +360,34 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 			*dest = '\0';
 			return (dest);
 		}
-    size = ft_strlen(&s[start]);
+	size = ft_strlen(&s[start]);
 	if(size > len)
 		size = len;
-    dest = ft_strndup(&s[start], size);
+	dest = ft_strndup(&s[start], size);
 	return (dest);
 }
 
 char *ft_strjoin(char const *s1, char const *s2)
 {
-    int i;
-    int size;
-    char *dest;
+	int i;
+	int size;
+	char *dest;
 
-    i = -1;
-    size = (ft_strlen(s1) + ft_strlen(s2)); 
-    if(!(dest = malloc(size * sizeof(char)))) 
-        return (NULL);
-    while (*s1)
-    {
-        dest[++i] = *s1;
-        s1++;
-    }
-    while (*s2)
-    {
-        dest[++i] = *s2;
-        s2++;
-    }
-    dest[++i] = '/0';
+	i = -1;
+	size = (ft_strlen(s1) + ft_strlen(s2)); 
+	if(!(dest = malloc(size * sizeof(char)))) 
+		return (NULL);
+	while (*s1)
+	{
+		dest[++i] = *s1;
+		s1++;
+	}
+	while (*s2)
+	{
+		dest[++i] = *s2;
+		s2++;
+	}
+	dest[++i] = '/0';
 return (dest);
 }
 
@@ -414,16 +414,16 @@ int		char_count(char const *str, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-    int i;
+	int i;
 	int j;
 	int lgt;
-    char *dest;
+	char *dest;
 
 	i = 0;
 	j = -1;
 	lgt = (char_count(s1, set) + 1);
 	if(!(dest = malloc(lgt * sizeof(char)))) 
-        return (NULL);
+		return (NULL);
 	while (*s1)
 	{
 		while(set[i] && set[i] != *s1)
@@ -481,7 +481,7 @@ char	**ft_split(char const *s, char c)
 	if(!count)
 	{
 		if(!(dest[0] = malloc(sizeof(char)))) 
-        	return (NULL);
+			return (NULL);
 		*dest[0] = '\0';
 		return (dest);
 	}
@@ -504,52 +504,52 @@ char	**ft_split(char const *s, char c)
 
 int     lgt_check(int n)
 {
-    int i;
+	int i;
 
-    i = 1;
-    while ((n /= 10) > 0)
-        i++;
-    return (i);
+	i = 1;
+	while ((n /= 10) > 0)
+		i++;
+	return (i);
 }
 
 
 char    *ft_itoa(int n)
 {
-    int i;
-    int np;
-    char *dest;
+	int i;
+	int np;
+	char *dest;
 
-    np = 1;
-    if (n < 0)
-        np = -1;
-    n *= np;
-    i = (lgt_check(n) + 1);
-    if (np < 0)
-        i++;
-    if (!(dest = malloc(sizeof(char) * i)))
+	np = 1;
+	if (n < 0)
+		np = -1;
+	n *= np;
+	i = (lgt_check(n) + 1);
+	if (np < 0)
+		i++;
+	if (!(dest = malloc(sizeof(char) * i)))
 		return (NULL);
-    while (--i >= 0)
-    {
-        dest[i] = (n % 10);
-        n /= 10;
-    }
-    return (dest);
+	while (--i >= 0)
+	{
+		dest[i] = (n % 10);
+		n /= 10;
+	}
+	return (dest);
 }
 
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-    int i;
-    int lgt;
-    char *dest;
+	int i;
+	int lgt;
+	char *dest;
 
-    i = -1;
-    lgt = (ft_strlen(s) + 1);
-    if (!(dest = malloc(sizeof(char*) * lgt)))
+	i = -1;
+	lgt = (ft_strlen(s) + 1);
+	if (!(dest = malloc(sizeof(char*) * lgt)))
 		return (NULL);
-    while (s[++i])
-        dest[i] = f(s[i]);
-    dest[i] = '\0';
-    return (dest);
+	while (s[++i])
+		dest[i] = f(s[i]);
+	dest[i] = '\0';
+	return (dest);
 }
 
 /*////////////////////////////////////////////// A TESTER /////////////////////////////////////////////*/
@@ -583,5 +583,3 @@ void ft_putnbr_fd(int n, int fd)
 	n += '0';
 	write(fd, &n, 1);
 }
-
-/*////////////////////////////////////////////// FILES //////////////////////////////////////////////////////*/
