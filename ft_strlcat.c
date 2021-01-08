@@ -6,11 +6,11 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:43:40 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/08 16:58:04 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/08 17:24:20 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_strlcat(char *dest, const char *src, int lgt)
+int		ft_strlcat(char *dest, const char *src, int lgt)
 {
 	int dest_size;
 	int i;
@@ -26,5 +26,5 @@ int     ft_strlcat(char *dest, const char *src, int lgt)
 		src++;
 	}
 	dest[i] = '\0';
-	return dest_size;
+	return (dest_size);
 }
