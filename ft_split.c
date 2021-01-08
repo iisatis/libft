@@ -6,7 +6,7 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 17:46:28 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/08 18:33:09 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/08 18:38:43 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ char	**ft_split(char const *s, char c)
 
 	i = -1;
 	count = words_count(s, c);
+	if (!(dest = malloc(sizeof(char*) * (count + 1))))
+		return (NULL);
 	if (!count)
 	{
 		if (!(dest[0] = malloc(sizeof(char))))
@@ -64,8 +66,6 @@ char	**ft_split(char const *s, char c)
 		*dest[0] = '\0';
 		return (dest);
 	}
-	if (!(dest = malloc(sizeof(char*) * (count + 1))))
-		return (NULL);
 	while (s[++i])
 	{
 		while (s[i] == c)
