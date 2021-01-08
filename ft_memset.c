@@ -6,14 +6,14 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:21:36 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/08 16:58:04 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/08 17:22:52 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	*ft_memset(void *p, int value, size_t size)
 {
 	int i;
-	
+
 	i = -1;
 	while (++i < size)
 		p[i] = value;

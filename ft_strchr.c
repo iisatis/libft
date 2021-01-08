@@ -6,17 +6,17 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:30:04 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/08 16:58:04 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/08 17:22:08 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char    *ft_strchr(const char *str, int chr)
+char	*ft_strchr(const char *str, int chr)
 {
-    while (*str)
-    {
-        if (*str == chr)
-            return str;
-        str++;
-    }
-    return (NULL);
+	while (*str)
+	{
+		if (*str == chr)
+			return (str);
+		str++;
+	}
+	return (NULL);
 }

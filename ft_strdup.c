@@ -6,11 +6,11 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:46:40 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/08 17:12:38 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/08 17:15:25 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include 'ft_strlen.c'
+#include "ft_strlen.c"
 
 char	*ft_strdup(const char *src)
 {
