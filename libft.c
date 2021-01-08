@@ -331,23 +331,40 @@ char *ft_strdup(const char *src)
 
 /*/////////////////////////////////////////////// PART 2 //////////////////////////////////////////////////////////////////*/
 
+char *ft_strndup(const char *src, unsigned int len)
+{
+    int i;
+    char *dest;
+
+    i = -1;
+    if(!(dest = malloc(len + 1 * sizeof(char))))
+        return (NULL); 
+    while (src[++i] && i < len)
+        dest[i] = src[i];
+	dest[i] = '\0';
+    return (dest);
+}
 
 char *ft_substr(char const *s, unsigned int start, size_t len)
 {
     int i;
     int size;
-    char *dest;
+	char *dest;
 
     i = -1;
-    while (*s != start)
-        s++;
-    size = ft_strlen(s);
-    if(!(dest = malloc(size * sizeof(char)))) 
-        return (NULL);
-    while (s[++i] && i < size)
-        dest[i] = s[i];
-    dest[size] = '/0';
-    return (dest);
+    while (++i < start)
+		if(!s[i])
+		{
+			if(!(dest = malloc(sizeof(char))))
+				return (NULL);
+			*dest = '\0';
+			return (dest);
+		}
+    size = ft_strlen(&s[start]);
+	if(size > len)
+		size = len;
+    dest = ft_strndup(&s[start], size);
+	return (dest);
 }
 
 char *ft_strjoin(char const *s1, char const *s2)
