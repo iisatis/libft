@@ -440,41 +440,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 /*///////////////////////////////////////// A TESTER /////////////////////////////////////////////////////////*/
 
-
-/*
-char	**fill_tab(char **tab, char sep, char *str)
+void	free_all()
 {
-	int	w_lgt;
-	int x;
-	int y;
-	int i;
 
-	x = 0;
-	y = -1;
-	i = 0;
-	w_lgt = 0;
-	while str[i] == sep)
-		i++;
-	while (str[i])
-	{
-		if (!(tab[x] = malloc(sizeof(char) * (word_lgt(str, sep, i) + 1))))
-			return (NULL);
-		while (str[i] && str[i] != sep)
-			tab[x][++y] = str[i++];
-		tab[x][++y] = '\0';
-		while (str[i] == sep)
-			i++;
-		y = -1;
-		x++;
-	}
-	tab[x] = 0;
-	return (tab);
+
+	
 }
-*/
-
-
-
-
 
 char	**ft_split(char const *s, char c)
 {
