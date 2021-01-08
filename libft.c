@@ -455,13 +455,18 @@ int		words_count(char const *s, char sep)
 	int count;
 
 
-	i = -1;
-	while(s[++i])
+	i = 0;
+	count = 0;
+	while(s[i])
 	{
-
-
-
+		while(s[i] == sep)
+			i++;
+		if(s[i])
+			count++;
+		while(s[i] && (s[i] != sep))
+			i++;
 	}
+	return (count);
 }
 
 char	**ft_split(char const *s, char c)
