@@ -6,15 +6,17 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:22:07 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/08 16:58:04 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/09 15:52:27 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+# include "libft.h"
+
 void	ft_bzero(void *s, size_t n)
 {
-	int i;
+	long i;
 
 	i = -1;
 	while (++i < n)
-		s[i] = '\0';
+		((unsigned char *)s)[i] = 0;
 }
