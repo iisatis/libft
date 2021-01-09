@@ -6,7 +6,7 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 17:46:28 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/09 16:03:59 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/09 16:56:01 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int		words_count(char const *s, char sep)
 	return (count);
 }
 
-int		word_len(char *s, char sep)
+int		word_len(const char *s, char sep)
 {
 	int i;
 
@@ -62,15 +62,16 @@ int		fill_tab(char **dest, char const *s, char c)
 			i++;
 		if (s[i])
 		{
-			if (!(*dest = ft_strndup(&s[i])))
+			if (!(*dest = ft_strndup(&s[i], word_len(&s[i], c))))
 			{
 				free_all(dest);
-				return (NULL);
+				return (0);
 			}
 			dest++;
 			i += word_len(&s[i], c);
 		}
 	}
+	return (0);
 }
 
 char	**ft_split(char const *s, char c)
@@ -88,7 +89,7 @@ char	**ft_split(char const *s, char c)
 		*dest[0] = '\0';
 		return (dest);
 	}
-	if (!(dest = fill_tab(dest, s, c)))
+	if (fill_tab(dest, s, c))
 		return (NULL);
 	return (dest);
 }
