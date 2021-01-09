@@ -6,9 +6,11 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:24:51 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/09 15:34:48 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/09 16:03:59 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+# include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t size)
 {

@@ -6,11 +6,13 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:27:50 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/08 16:42:32 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/09 16:26:30 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+# include "libft.h"
+
+size_t		ft_strlen(char *str)
 {
 	int i;
 

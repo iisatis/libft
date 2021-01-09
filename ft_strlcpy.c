@@ -6,11 +6,13 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:32:35 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/08 16:58:04 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/09 16:27:54 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlcpy(char *dest, const char *src, int lgt)
+# include "libft.h"
+
+size_t		ft_strlcpy(char *dest, const char *src, int lgt)
 {
 	int i;
 	int n;

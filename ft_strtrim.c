@@ -6,9 +6,11 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:49:08 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/08 17:40:59 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/09 16:03:59 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+# include "libft.h"
 
 int		char_count(char const *str, char const *set)
 {
