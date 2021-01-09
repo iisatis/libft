@@ -6,21 +6,21 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:48:30 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/09 17:09:10 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/09 17:18:30 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	int		i;
-	int		size;
+	size_t	size;
 	char	*dest;
 
 	i = -1;
-	size = (ft_strlen(s1) + ft_strlen(s2));
-	if (!(dest = malloc(size * sizeof(char))))
+	size = (ft_strlen((char *)s1) + ft_strlen((char *)s2));
+	if (!(dest = malloc((size + 1) * sizeof(char))))
 		return (NULL);
 	while (*s1)
 	{

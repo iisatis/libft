@@ -6,14 +6,16 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:31:49 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/08 17:33:24 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/09 17:27:29 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int		ft_strncmp(const char *first_str, const char *second_str, size_t lgt)
 {
-	int i;
-	int r;
+	size_t	i;
+	int		r;
 
 	i = 0;
 	r = 0;
