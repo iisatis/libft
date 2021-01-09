@@ -6,7 +6,7 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:26:16 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/09 16:03:59 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/09 16:33:16 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_memcmp(const void *p1, const void *p2, size_t size)
 {
-	long	i;
+	size_t	i;
 	int		r;
 	const unsigned char *p1_c;
 	const unsigned char *p2_c;
