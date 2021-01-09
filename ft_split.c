@@ -6,7 +6,7 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 17:46:28 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/08 18:38:43 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/09 14:11:11 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,23 +49,11 @@ int		word_len(char *s, char sep)
 	return (i);
 }
 
-char	**ft_split(char const *s, char c)
+int		fill_tab(char **dest, char const *s, char c)
 {
 	int		i;
-	int		count;
-	char	**dest;
 
 	i = -1;
-	count = words_count(s, c);
-	if (!(dest = malloc(sizeof(char*) * (count + 1))))
-		return (NULL);
-	if (!count)
-	{
-		if (!(dest[0] = malloc(sizeof(char))))
-			return (NULL);
-		*dest[0] = '\0';
-		return (dest);
-	}
 	while (s[++i])
 	{
 		while (s[i] == c)
@@ -81,5 +69,24 @@ char	**ft_split(char const *s, char c)
 			i += word_len(&s[i], c);
 		}
 	}
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int		count;
+	char	**dest;
+
+	count = words_count(s, c);
+	if (!(dest = malloc(sizeof(char*) * (count + 1))))
+		return (NULL);
+	if (!count)
+	{
+		if (!(dest[0] = malloc(sizeof(char))))
+			return (NULL);
+		*dest[0] = '\0';
+		return (dest);
+	}
+	if (!(dest = fill_tab(dest, s, c)))
+		return (NULL);
 	return (dest);
 }
