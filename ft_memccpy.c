@@ -6,7 +6,7 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:23:46 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/09 17:18:30 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/09 17:45:36 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memccpy(void *dest, const void *src, int ch, size_t size)
 {
-	size_t			i;
-	unsigned char	*dest_c;
+	size_t				i;
+	unsigned char		*dest_c;
 	const unsigned char	*src_c;
 
 	src_c = (const unsigned char*)src;

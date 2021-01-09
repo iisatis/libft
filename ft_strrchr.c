@@ -6,7 +6,7 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:31:24 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/09 17:35:26 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/09 17:45:36 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strrchr(const char *str, int chr)
 {
-	int i;
-	char *str_c;
+	int		i;
+	char	*str_c;
 
 	i = 0;
 	str_c = (char *)str;

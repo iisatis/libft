@@ -6,7 +6,7 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:24:51 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/09 17:18:30 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/09 17:45:36 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t size)
 {
-	size_t			i;
+	size_t		i;
 	char		temp[size + 1];
 	char		*dest_c;
 	const char	*src_c;

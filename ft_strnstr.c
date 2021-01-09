@@ -6,7 +6,7 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:44:22 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/09 17:32:02 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/09 17:45:36 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strnstr(const char *str, const char *find, unsigned int lgt)
 {
-	unsigned int i;
-	char *str_c;
+	unsigned int	i;
+	char			*str_c;
 
 	str_c = (char *)str;
 	if (*find == '\0' || lgt == 0)
