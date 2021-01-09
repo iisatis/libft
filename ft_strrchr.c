@@ -6,7 +6,7 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:31:24 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/09 17:45:36 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/09 18:36:44 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,26 @@
 char	*ft_strrchr(const char *str, int chr)
 {
 	int		i;
-	char	*str_c;
 
 	i = 0;
-	str_c = (char *)str;
-	while (*str_c)
+	if (chr == '\0')
 	{
-		if (*str_c == chr)
+		while (*str)
+			str++;
+		return ((char *)str);
+	}
+	while (*str)
+	{
+		if (*str == chr)
 			i++;
-		str_c++;
+		str++;
 	}
 	if (i == 0)
 		return (NULL);
 	else
 	{
-		while (*str_c != chr)
-			str_c--;
-		return (str_c);
+		while (*str != chr)
+			str--;
+		return ((char *)str);
 	}
 }
