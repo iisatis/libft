@@ -6,7 +6,7 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 15:42:59 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/10 15:52:01 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/10 18:39:16 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_strchr(const char *str, int chr);
 char	*ft_strrchr(const char *str, int chr);
 int		ft_strncmp(const char *first_str, const char *second_str, size_t lgt);
 size_t	ft_strlcpy(char *dest, const char *src, size_t lgt);
-size_t	ft_strlcat(char *dest, const char *src, int lgt);
+size_t  ft_strlcat(char *dest, const char *src, size_t len);
 char	*ft_strnstr(const char *str, const char *find, size_t lgt);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t elem_count, size_t elem_size);
