@@ -6,41 +6,51 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:50:07 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/09 17:18:30 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/10 17:56:04 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		lgt_check(int n)
+int		lgt_check(long n)
 {
 	int i;
 
 	i = 1;
-	while ((n /= 10) > 0)
+	if (n < 0)
+	{
 		i++;
+		n *= -1;
+	}
+	while (n > 9)
+	{
+		i++;
+		n /= 10;
+	}
 	return (i);
 }
 
 char	*ft_itoa(int n)
 {
 	int		i;
-	int		np;
+	long	r;
 	char	*dest;
 
-	np = 1;
-	if (n < 0)
-		np = -1;
-	n *= np;
-	i = (lgt_check(n) + 1);
-	if (np < 0)
-		i++;
-	if (!(dest = malloc(sizeof(char) * i)))
+	r = (long)n;
+	i = (lgt_check(r));
+	if (!(dest = malloc(sizeof(char) * (i + 1))))
 		return (NULL);
-	while (--i >= 0)
+	if (r < 0)
 	{
-		dest[i] = (n % 10);
-		n /= 10;
+		r *= -1;
+		dest[0] = '-';
 	}
+	dest[i] = '\0';
+	while (r > 9)
+	{
+		dest[--i] = ((r % 10) + '0');
+		r /= 10;
+	}
+	dest[--i] = (r + '0');
 	return (dest);
 }
