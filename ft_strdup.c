@@ -6,7 +6,7 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:46:40 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/09 18:46:53 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/10 18:01:10 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strdup(const char *src)
 
 	i = -1;
 	size = ft_strlen((char *)src);
-	if (!(dest = malloc((size + 1) * sizeof(char))) || size == 0)
+	if (!(dest = malloc((size + 1) * sizeof(char))))
 		return (NULL);
 	while (src[++i])
 		dest[i] = src[i];
