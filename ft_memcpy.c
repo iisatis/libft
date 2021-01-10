@@ -6,7 +6,7 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:23:18 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/09 18:25:09 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/10 14:17:21 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t size)
 	char		*dest_c;
 
 	i = 0;
+	if (dest == NULL && src == NULL)
+		return (NULL);
 	src_c = (const char *)src;
 	dest_c = (char *)dest;
 	while (i < size)
