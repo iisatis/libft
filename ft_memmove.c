@@ -6,7 +6,7 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:24:51 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/10 16:48:42 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/11 16:54:12 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t size)
 {
-	size_t		i;
-	char		temp[size + 1];
-	char		*dest_c;
-	const char	*src_c;
+	size_t				i;
+	unsigned char		temp[size + 1];
+	unsigned char		*dest_c;
+	const unsigned char	*src_c;
 
-	dest_c = (char *)dest;
-	src_c = (const char *)src;
+	dest_c = (unsigned char *)dest;
+	src_c = (const unsigned char *)src;
 	i = 0;
 	if (dest == NULL && src == NULL)
 		return (NULL);

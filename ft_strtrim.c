@@ -6,52 +6,34 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:49:08 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/09 17:18:30 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/11 17:58:12 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		char_count(char const *str, char const *set)
-{
-	int i;
-	int c;
-
-	i = 0;
-	c = 0;
-	while (*str)
-	{
-		while (set[i] && set[i] != *str)
-			i++;
-		if (!set[i])
-			c++;
-		i = 0;
-		str++;
-	}
-	return (c);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		i;
-	int		j;
-	int		lgt;
+	size_t	start;
+	size_t	end;
+	size_t	i;
 	char	*dest;
 
+	start = 0;
+	end = ft_strlen((char *)s1);
 	i = 0;
-	j = -1;
-	lgt = (char_count(s1, set) + 1);
-	if (!(dest = malloc(lgt * sizeof(char))))
+	while(ft_strchr(set, s1[start]))
+		start++;
+	while (ft_strchr(set, s1[end]))
+		end--;
+	if (!(dest = malloc((end - start + 2) * sizeof(char))))
 		return (NULL);
-	while (*s1)
+	while (start <= end)
 	{
-		while (set[i] && set[i] != *s1)
-			i++;
-		if (!set[i])
-			dest[++j] = *s1;
-		i = 0;
-		s1++;
+		dest[i] = (char)s1[start];
+		start++;
+		i++;
 	}
-	dest[++j] = '\0';
+	dest[i] = '\0';
 	return (dest);
 }
