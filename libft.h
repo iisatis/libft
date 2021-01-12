@@ -6,7 +6,7 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 15:42:59 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/12 17:42:43 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/12 17:45:11 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ int				ft_toupper(int a);
 int				ft_tolower(int a);
 char			*ft_strchr(const char *str, int chr);
 char			*ft_strrchr(const char *str, int chr);
-int				ft_strncmp(const char *s1, const char *s2, size_t lgt);
-size_t			ft_strlcpy(char *dest, const char *src, size_t lgt);
+int				ft_strncmp(const char *s1, const char *s2, size_t len);
+size_t			ft_strlcpy(char *dest, const char *src, size_t len);
 size_t			ft_strlcat(char *dest, const char *src, size_t len);
-char			*ft_strnstr(const char *str, const char *find, size_t lgt);
+char			*ft_strnstr(const char *str, const char *find, size_t len);
 int				ft_atoi(const char *str);
 void			*ft_calloc(size_t elem_count, size_t elem_size);
 char			*ft_strdup(const char *src);
