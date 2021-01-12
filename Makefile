@@ -6,7 +6,7 @@
 #    By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/09 14:16:58 by pflorent          #+#    #+#              #
-#    Updated: 2021/01/12 18:18:28 by pflorent         ###   ########.fr        #
+#    Updated: 2021/01/12 18:26:03 by pflorent         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ HEAD	= libft.h
 
 OBJS	= ${SRCS:.c=.o}
 
-OBJS	= ${BONUS:.c=.o}
+OBJSBONUS	= ${BONUS:.c=.o}
 
 CC		= gcc
 
@@ -36,9 +36,9 @@ RM		= rm -f
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I ${HEAD}
 
 ${NAME}:	${OBJS}
-			ar rc ${NAME} ${OBJSBONUS}
+			ar rc ${NAME} ${OBJS}
 
-bonus:		${OBJS} ${OBJS}
+bonus:		${OBJS} ${OBJSBONUS}
 			ar rc ${NAME} ${OBJS} ${OBJSBONUS}
 
 all:		${NAME}
