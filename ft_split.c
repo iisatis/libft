@@ -63,7 +63,7 @@ int		fill_tab(char **dest, char const *s, char c)
 			i++;
 		if (s[i])
 		{
-			if (!(*dest = ft_strndup(&s[i], word_len(&s[i], c))))	
+			if (!(*dest = ft_strndup(&s[i], word_len(&s[i], c))))
 				return (1);
 			dest++;
 			i += word_len(&s[i], c);
@@ -85,7 +85,7 @@ char	**ft_split(char const *s, char c)
 	{
 		if (!(dest[0] = malloc(sizeof(char))))
 			return (NULL);
-		*dest[0] = '\0';
+		*dest = 0;
 		return (dest);
 	}
 	if (fill_tab(dest, s, c))
