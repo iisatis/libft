@@ -15,20 +15,20 @@
 void	*ft_memccpy(void *dest, const void *src, int ch, size_t size)
 {
 	size_t				i;
-	unsigned char		*dest_c;
-	const unsigned char	*src_c;
+	unsigned char		*d;
+	const unsigned char	*s;
 
-	src_c = (const unsigned char*)src;
-	dest_c = (unsigned char*)dest;
+	s = (const unsigned char*)src;
+	d = (unsigned char*)dest;
 	i = 0;
-	while (i < size && src_c[i] != (const unsigned char)ch)
+	while (i < size && s[i] != (const unsigned char)ch)
 	{
-		dest_c[i] = (unsigned char)src_c[i];
+		d[i] = (unsigned char)s[i];
 		i++;
 	}
-	if (src_c[i] == (const unsigned char)ch && i < size)
+	if (s[i] == (const unsigned char)ch && i < size)
 	{
-		dest_c[i] = (unsigned char)src_c[i];
+		d[i] = (unsigned char)s[i];
 		return (&dest[i + 1]);
 	}
 	return (NULL);
