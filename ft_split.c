@@ -6,7 +6,7 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 17:46:28 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/12 17:09:18 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/12 17:30:02 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	free_all(char **to_free)
 	free(to_free);
 }
 
-size_t		word_len(const char *s, char sep)
+size_t	word_len(const char *s, char sep)
 {
 	int i;
 
@@ -32,7 +32,7 @@ size_t		word_len(const char *s, char sep)
 	return (i);
 }
 
-size_t		words_count(char const *s, char sep)
+size_t	words_count(char const *s, char sep)
 {
 	size_t i;
 	size_t count;
@@ -72,7 +72,7 @@ int		fill_tab(char **dest, char const *s, char c, size_t words)
 char	**ft_split(char const *s, char c)
 {
 	size_t	count;
-	char **dest;
+	char	**dest;
 
 	count = words_count(s, c);
 	if (!(dest = malloc(sizeof(char*) * (count + 1))))
