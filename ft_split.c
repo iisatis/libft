@@ -22,6 +22,16 @@ void	free_all(char **to_free)
 	free(to_free);
 }
 
+int		word_len(const char *s, char sep)
+{
+	int i;
+
+	i = 0;
+	while (s[i] && s[i] != sep)
+		i++;
+	return (i);
+}
+
 int		words_count(char const *s, char sep)
 {
 	int i;
@@ -31,24 +41,15 @@ int		words_count(char const *s, char sep)
 	count = 0;
 	while (s[i])
 	{
-		while (s[i] == sep)
+		while (s[i] && s[i] == sep)
 			i++;
 		if (s[i])
+		{
 			count++;
-		while (s[i] && (s[i] != sep))
-			i++;
+			i += word_len(&s[i], sep);
+		}
 	}
 	return (count);
-}
-
-int		word_len(const char *s, char sep)
-{
-	int i;
-
-	i = 0;
-	while (s[i] != sep)
-		i++;
-	return (i);
 }
 
 int		fill_tab(char **dest, char const *s, char c)
@@ -62,15 +63,13 @@ int		fill_tab(char **dest, char const *s, char c)
 			i++;
 		if (s[i])
 		{
-			if (!(*dest = ft_strndup(&s[i], word_len(&s[i], c))))
-			{
-				free_all(dest);
-				return (0);
-			}
+			if (!(*dest = ft_strndup(&s[i], word_len(&s[i], c))))	
+				return (1);
 			dest++;
 			i += word_len(&s[i], c);
 		}
 	}
+	*dest = 0;
 	return (0);
 }
 
@@ -90,6 +89,9 @@ char	**ft_split(char const *s, char c)
 		return (dest);
 	}
 	if (fill_tab(dest, s, c))
+	{
+		free_all(dest);
 		return (NULL);
+	}
 	return (dest);
 }
