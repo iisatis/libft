@@ -6,7 +6,7 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 17:46:28 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/09 17:18:30 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/12 17:09:18 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	free_all(char **to_free)
 	free(to_free);
 }
 
-int		word_len(const char *s, char sep)
+size_t		word_len(const char *s, char sep)
 {
 	int i;
 
@@ -32,10 +32,10 @@ int		word_len(const char *s, char sep)
 	return (i);
 }
 
-int		words_count(char const *s, char sep)
+size_t		words_count(char const *s, char sep)
 {
-	int i;
-	int count;
+	size_t i;
+	size_t count;
 
 	i = 0;
 	count = 0;
@@ -52,22 +52,18 @@ int		words_count(char const *s, char sep)
 	return (count);
 }
 
-int		fill_tab(char **dest, char const *s, char c)
+int		fill_tab(char **dest, char const *s, char c, size_t words)
 {
-	int		i;
-
-	i = -1;
-	while (s[++i])
+	while (words)
 	{
-		while (s[i] == c)
-			i++;
-		if (s[i])
-		{
-			if (!(*dest = ft_strndup(&s[i], word_len(&s[i], c))))
-				return (1);
-			dest++;
-			i += word_len(&s[i], c);
-		}
+		while (*s == (const char)c)
+			s++;
+		if (!(*dest = ft_strndup(s, word_len(s, c))))
+			return (1);
+		while (*s && *s != (const char)c)
+			s++;
+		words--;
+		dest++;
 	}
 	*dest = 0;
 	return (0);
@@ -75,20 +71,20 @@ int		fill_tab(char **dest, char const *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	int		count;
-	char	**dest;
+	size_t	count;
+	char **dest;
 
 	count = words_count(s, c);
 	if (!(dest = malloc(sizeof(char*) * (count + 1))))
 		return (NULL);
 	if (!count)
 	{
-		if (!(dest[0] = malloc(sizeof(char))))
+		if (!(dest = malloc(sizeof(char*))))
 			return (NULL);
 		*dest = 0;
 		return (dest);
 	}
-	if (fill_tab(dest, s, c))
+	if (fill_tab(dest, s, c, count))
 	{
 		free_all(dest);
 		return (NULL);
