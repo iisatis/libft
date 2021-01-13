@@ -6,7 +6,7 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:23:46 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/10 16:37:23 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/13 14:54:57 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,11 @@ void	*ft_memccpy(void *dest, const void *src, int ch, size_t size)
 		d[i] = (unsigned char)s[i];
 		i++;
 	}
-	if (s[i] == (const unsigned char)ch && i < size)
-	{
-		d[i] = (unsigned char)s[i];
-		return (&dest[i + 1]);
-	}
+	if (i < size)
+		if (s[i] == (const unsigned char)ch)
+		{
+			d[i] = (unsigned char)s[i];
+			return (&dest[i + 1]);
+		}
 	return (NULL);
 }

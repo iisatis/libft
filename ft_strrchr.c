@@ -6,7 +6,7 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:31:24 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/09 18:36:44 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/13 14:49:45 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*ft_strrchr(const char *str, int chr)
 	}
 	while (*str)
 	{
-		if (*str == chr)
+		if (*str == (char)chr)
 			i++;
 		str++;
 	}
@@ -33,7 +33,7 @@ char	*ft_strrchr(const char *str, int chr)
 		return (NULL);
 	else
 	{
-		while (*str != chr)
+		while (*str != (char)chr)
 			str--;
 		return ((char *)str);
 	}
