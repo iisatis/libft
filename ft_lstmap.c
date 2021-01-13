@@ -6,7 +6,7 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 16:22:28 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/13 18:28:52 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/13 18:33:25 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			return (NULL);
 		}
 		lst = lst->next;
+		ft_lstadd_back(&new_list, temp);
 	}
 	return (new_list);
 }
