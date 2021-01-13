@@ -6,7 +6,7 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:47:44 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/13 15:14:02 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/13 17:00:51 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 			*dest = '\0';
 			return (dest);
 		}
-		i++;
 	}
 	size = ft_strlen((char *)&s[start]);
 	if (size > len)
