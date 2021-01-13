@@ -6,7 +6,7 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 16:22:28 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/13 18:02:07 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/13 18:15:52 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,10 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	if (!(size = ft_lstsize(lst)))
 		return (NULL);
-	
-	while (size)
+	if (!(*new_list = ft_lstnew(f(lst->content))))
+			return (NULL);
+	lst = lst->next;	
+	while (--size)
 	{
 		if (!(temp = ft_lstnew(f(lst->content))))
 		{
@@ -29,7 +31,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			return (NULL);
 		}
 		lst = lst->next;
-		size--;
 	}
 	return (*new_list);
 }
