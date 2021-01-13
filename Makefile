@@ -6,7 +6,7 @@
 #    By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/09 14:16:58 by pflorent          #+#    #+#              #
-#    Updated: 2021/01/13 15:27:51 by pflorent         ###   ########.fr        #
+#    Updated: 2021/01/13 15:50:45 by pflorent         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCS	= ft_atoi.c ft_bzero.c ft_calloc.c ft_is.c ft_itoa.c ft_memccpy.c \
 		ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c \
 		ft_strndup.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c ft_to.c
 
-BONUS	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c
+BONUS	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c
 
 HEAD	= libft.h
 
