@@ -6,7 +6,7 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 15:42:59 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/13 15:22:56 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/13 15:27:36 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,5 @@ char			**ft_split(char const *s, char c);
 t_list			*ft_lstnew(void *content);
 void			ft_lstadd_front(t_list **alst, t_list *new_lst);
 int				ft_lstsize(t_list *lst);
+t_list			*ft_lstlast(t_list *lst);
 #endif
