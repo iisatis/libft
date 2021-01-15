@@ -6,7 +6,7 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/09 15:42:59 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/13 18:35:38 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/15 14:25:40 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ char			*ft_strnstr(const char *str, const char *find, size_t len);
 int				ft_atoi(const char *str);
 void			*ft_calloc(size_t elem_count, size_t elem_size);
 char			*ft_strdup(const char *src);
-char			*ft_strndup(const char *src, unsigned int len);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s1, char const *set);

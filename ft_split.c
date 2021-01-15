@@ -6,7 +6,7 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 17:46:28 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/12 17:30:02 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/15 14:44:36 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,9 @@ int		fill_tab(char **dest, char const *s, char c, size_t words)
 	{
 		while (*s == (const char)c)
 			s++;
-		if (!(*dest = ft_strndup(s, word_len(s, c))))
+		if (!(*dest = malloc(word_len(s, c) + 1 * sizeof(char))))
+			return (1);
+		if (!(ft_strlcpy(*dest, s, (word_len(s, c) + 1))))
 			return (1);
 		while (*s && *s != (const char)c)
 			s++;
