@@ -49,7 +49,7 @@ size_t	words_count(char const *s, char sep)
 	return (count);
 }
 
-int		fill_tab(char **dest, char const *s, char c, size_t words)
+char		**fill_tab(char **dest, char const *s, char c, size_t words)
 {
 	int i;
 
@@ -59,23 +59,28 @@ int		fill_tab(char **dest, char const *s, char c, size_t words)
 		while (*s == (const char)c)
 			s++;
 		if (!(dest[i] = malloc(word_len(s, c) + 1 * sizeof(char))))
-			return (i);
+		{
+			free_all(dest, i);
+			return (NULL);
+		}
 		if (!(ft_strlcpy(dest[i], s, (word_len(s, c) + 1))))
-			return (i + 1);
+		{
+			free_all(dest, (i + 1));
+			return (NULL);
+		}
 		while (*s && *s != (const char)c)
 			s++;
 		words--;
 		i++;
 	}
 	*dest = 0;
-	return (-1);
+	return (dest);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	size_t	count;
 	char	**dest;
-	int		to_free;
 
 	count = words_count(s, c);
 	if (!(dest = malloc(sizeof(char*) * (count + 1))))
@@ -90,12 +95,7 @@ char	**ft_split(char const *s, char c)
 		*dest = 0;
 		return (dest);
 	}
-	to_free = fill_tab(dest, s, c, count);
-	if (to_free != -1)
-	{
-		free_all(dest, to_free);
-		return (NULL);
-	}
+	dest = fill_tab(s, c, count);
 	return (dest);
 }
 
