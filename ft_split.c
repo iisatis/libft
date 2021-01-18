@@ -6,7 +6,7 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 17:46:28 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/18 16:41:02 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/18 16:44:56 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,10 @@ char			**ft_split(char const *s, char c)
 			s++;
 		dest[n] = filler(s, word_len(s, c));
 		if (!dest[n])
+		{
 			free_all(dest);
+			return (NULL);
+		}
 		while (*s && *s != (const char)c)
 			s++;
 		count--;
