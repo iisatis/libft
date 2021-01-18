@@ -6,7 +6,7 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 17:46:28 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/18 16:16:12 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/18 16:30:16 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,24 +72,26 @@ static char		*filler(const char *src, unsigned int len)
 char			**ft_split(char const *s, char c)
 {
 	size_t	count;
+	size_t	n;
 	char	**dest;
 
 	count = words_count(s, c);
+	n = 0;
 	if (!(dest = malloc(sizeof(char*) * (count + 1))))
 		return (NULL);
 	while (count)
 	{
 		while (*s && *s == (const char)c)
 			s++;
-		*dest = filler(s, word_len(s, c));
-		if (!*dest)
+		dest[n] = filler(s, word_len(s, c));
+		if (!dest[n])
 			free_all(dest);
 		while (*s && *s != (const char)c)
 			s++;
 		count--;
-		dest++;
+		n++;
 	}
-	*dest = 0;
+	dest[n] = 0;
 	return (dest);
 }
 
