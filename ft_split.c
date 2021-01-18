@@ -6,16 +6,19 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 17:46:28 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/18 14:37:08 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/18 16:16:12 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void		free_all(char **to_free, int n)
+static void		free_all(char **to_free)
 {
-	while (--n >= 0)
-		free(to_free[n]);
+	while (*to_free)
+	{
+		free(*to_free);
+		to_free++;
+	}
 	free(to_free);
 }
 
@@ -70,42 +73,23 @@ char			**ft_split(char const *s, char c)
 {
 	size_t	count;
 	char	**dest;
-	int		n;
 
 	count = words_count(s, c);
-	n = 0;
 	if (!(dest = malloc(sizeof(char*) * (count + 1))))
 		return (NULL);
-	if (!count)
-	{
-		if (!(dest = malloc(sizeof(char*))))
-		{
-			free(dest);
-			return (NULL);
-		}
-		*dest = 0;
-		return (dest);
-	}
 	while (count)
 	{
 		while (*s && *s == (const char)c)
 			s++;
-		if ()
-		{
-		
-		}
+		*dest = filler(s, word_len(s, c));
+		if (!*dest)
+			free_all(dest);
 		while (*s && *s != (const char)c)
 			s++;
-		n++;
 		count--;
+		dest++;
 	}
-
-
-
-
-
-
-
+	*dest = 0;
 	return (dest);
 }
 
