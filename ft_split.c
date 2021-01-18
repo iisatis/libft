@@ -6,7 +6,7 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 17:46:28 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/18 16:30:16 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/18 16:41:02 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,15 @@
 
 static void		free_all(char **to_free)
 {
-	while (*to_free)
+	int n;
+
+	n = 0;
+	while (to_free[n])
 	{
-		free(*to_free);
-		to_free++;
+		free(to_free[n]);
+		n++;
 	}
+	free(to_free[n]);
 	free(to_free);
 }
 
