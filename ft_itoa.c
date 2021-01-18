@@ -6,13 +6,13 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:50:07 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/10 17:56:04 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/18 14:08:03 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		lgt_check(long n)
+static int		lgt_check(long n)
 {
 	int i;
 

@@ -6,20 +6,20 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 17:46:28 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/15 14:44:36 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/18 14:08:03 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	free_all(char **to_free, int n)
+static void	free_all(char **to_free, int n)
 {
 	while (--n >= 0)
 		free(to_free[n]);
 	free(to_free);
 }
 
-size_t	word_len(const char *s, char sep)
+static size_t	word_len(const char *s, char sep)
 {
 	int i;
 
@@ -29,7 +29,7 @@ size_t	word_len(const char *s, char sep)
 	return (i);
 }
 
-size_t	words_count(char const *s, char sep)
+static size_t	words_count(char const *s, char sep)
 {
 	size_t i;
 	size_t count;
@@ -49,7 +49,7 @@ size_t	words_count(char const *s, char sep)
 	return (count);
 }
 
-char		**fill_tab(char **dest, char const *s, char c, size_t words)
+static char		**fill_tab(char **dest, char const *s, char c, size_t words)
 {
 	int i;
 

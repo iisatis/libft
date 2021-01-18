@@ -6,13 +6,13 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:47:44 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/15 14:18:09 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/18 14:08:03 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strndup(const char *src, unsigned int len)
+static char	*ft_strndup(const char *src, unsigned int len)
 {
 	size_t	i;
 	char	*dest;
@@ -29,7 +29,7 @@ char	*ft_strndup(const char *src, unsigned int len)
 	return (dest);
 }
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char		*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	unsigned int	i;
 	size_t			size;
