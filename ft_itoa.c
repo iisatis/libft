@@ -6,13 +6,13 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 16:50:07 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/18 14:08:03 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/18 16:32:20 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		lgt_check(long n)
+static int	lgt_check(long n)
 {
 	int i;
 
@@ -30,7 +30,7 @@ static int		lgt_check(long n)
 	return (i);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	int		i;
 	long	r;

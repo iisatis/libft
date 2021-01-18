@@ -6,7 +6,7 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 15:31:32 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/18 16:31:05 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/18 16:32:20 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,3 @@ void	ft_lstadd_back(t_list **alst, t_list *new)
 	else
 		*alst = new;
 }
-
