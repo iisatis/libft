@@ -6,13 +6,13 @@
 /*   By: pflorent <pflorent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 17:46:28 by pflorent          #+#    #+#             */
-/*   Updated: 2021/01/18 14:08:03 by pflorent         ###   ########.fr       */
+/*   Updated: 2021/01/18 14:37:08 by pflorent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	free_all(char **to_free, int n)
+static void		free_all(char **to_free, int n)
 {
 	while (--n >= 0)
 		free(to_free[n]);
@@ -49,6 +49,67 @@ static size_t	words_count(char const *s, char sep)
 	return (count);
 }
 
+static char		*filler(const char *src, unsigned int len)
+{
+	size_t	i;
+	char	*dest;
+
+	i = 0;
+	if (!(dest = malloc(len + 1 * sizeof(char))))
+		return (NULL);
+	while (src[i] && i < len)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
+char			**ft_split(char const *s, char c)
+{
+	size_t	count;
+	char	**dest;
+	int		n;
+
+	count = words_count(s, c);
+	n = 0;
+	if (!(dest = malloc(sizeof(char*) * (count + 1))))
+		return (NULL);
+	if (!count)
+	{
+		if (!(dest = malloc(sizeof(char*))))
+		{
+			free(dest);
+			return (NULL);
+		}
+		*dest = 0;
+		return (dest);
+	}
+	while (count)
+	{
+		while (*s && *s == (const char)c)
+			s++;
+		if ()
+		{
+		
+		}
+		while (*s && *s != (const char)c)
+			s++;
+		n++;
+		count--;
+	}
+
+
+
+
+
+
+
+	return (dest);
+}
+
+/*
 static char		**fill_tab(char **dest, char const *s, char c, size_t words)
 {
 	int i;
@@ -99,7 +160,7 @@ char	**ft_split(char const *s, char c)
 	return (dest);
 }
 
-/*
+
 void	free_all(char **to_free)
 {
 	int i;
